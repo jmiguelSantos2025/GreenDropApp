@@ -13,7 +13,7 @@ import { View, Text, StyleSheet, Button} from 'react-native';
 const GameScreen = () => {
   return (
     <View style={styles.container}>
-      <Button title="Introdução" /> 
+      <Button title="Introdução" />
       <Button title="Controle de Irrigação"/>
       <Button title="Dicas de Economia de agua"/>
       <Button title="Desafios ambientais"/>
