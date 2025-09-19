@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-react-native": "^1.0.0",
     "expo": "~54.0.7",
+    "expo-camera": "~13.4.4",
     "expo-constants": "~18.0.9",
     "expo-linking": "~8.0.8",
     "expo-router": "~6.0.6",
