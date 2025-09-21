@@ -43,7 +43,7 @@ export default function PainelControle(){
                 <ImageBackground style = {styles.Imagem}>
                 
                 </ImageBackground>
-                <Text style = {styles.Pergunta}>Pergunta</Text>
+                <Text style = {styles.Pergunta}>Qual é a principal técnica usada pela Inteligência Artificial para entender gestos humanos em imagens ou vídeos?</Text>
                 {alternativas.map(alt => (
                 <Alternativa
                 key={alt.id}
@@ -81,7 +81,7 @@ export default function PainelControle(){
                             Correta={true}
                             Selecionada={true}
                             ResultadoVisivel={true} 
-                            onPress={() => {}}
+                            onPress={() => {}}  
                           />
                         )}
                         <Text style = {styles.TextoCorreto}>
