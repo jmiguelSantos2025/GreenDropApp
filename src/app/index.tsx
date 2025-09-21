@@ -1,39 +1,30 @@
-<<<<<<<< HEAD:src/app/index.tsx
-import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { useEffect } from "react";
+import { Image, StyleSheet, View } from "react-native";
+import { useRouter } from "expo-router";
 
-const GameScreen = () => {
-  return (
-    <View>
-        
-========
-import React from 'react';
-import { View, Text, StyleSheet, Button} from 'react-native';
+export default function Index() {
+  const router = useRouter();
 
-const GameScreen = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.replace("/Telas/PainelControle"); 
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Button title="Introdução" /> 
-      <Button title="Controle de Irrigação"/>
-      <Button title="Dicas de Economia de agua"/>
-      <Button title="Desafios ambientais"/>
-      <Button title="Fase final"/>
->>>>>>>> b7e0632cc3f78f240cedfc2212179c349538fd9e:src/App/(tabs)/GameScreen/index.tsx
+    <View style={styles.TelaCarregamento}>
+      <Image source={require("../images/LogoGreenDrop.png")} />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#e0f7fa',
-  },
-  text: {
-    fontSize: 22,
-    color: '#00796b',
+  TelaCarregamento: {
+    width: "100%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
-
-export default GameScreen;
