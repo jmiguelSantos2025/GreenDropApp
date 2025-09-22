@@ -20,6 +20,14 @@ export default function GameScreen(){
 
   const[Visible, setVisible] = useState(false)
 
+  // Função para navegar para a tela de quiz com o ID da fase
+  const navegarParaQuiz = (faseId: number) => {
+    router.push({
+      pathname: "/TelasQuiz/TelaQuiz",
+      params: { id: faseId }
+    });
+  }
+
   return (
     <ScrollView contentContainerStyle = {styles.Tela}>
       
@@ -32,7 +40,7 @@ export default function GameScreen(){
           <Text style = {styles.Subtitulo}>Como a IA entende gestos?</Text>
         </View>
         <View style = {{alignItems: "center",}}>
-          <BotaoFase numero={1} destino="/TelasQuiz/TelaQuiz"/>
+          <BotaoFase numero={1} onPress={() => navegarParaQuiz(1)}/>
           <View style = {{alignItems: "center",}}>
             <Image style = {styles.Imagem} source={require("../../images/RioImpar.png")}/>
           </View>
@@ -47,7 +55,7 @@ export default function GameScreen(){
           <Text style = {styles.Subtitulo}>Como ativar a rega</Text>
         </View>
         <View style = {{alignItems: "center",}}>
-          <BotaoFase numero={2} destino="/TelasQuiz/TelaQuiz"/>
+          <BotaoFase numero={2} onPress={() => navegarParaQuiz(2)}/>
           <View style = {{alignItems: "center",}}>
             <Image style = {styles.Imagem} source={require("../../images/RioPar.png")}/>
           </View>
@@ -59,11 +67,11 @@ export default function GameScreen(){
             <Text style={styles.Titulo}>Economia de Água</Text>
             <View style={styles.Linha} />
           </View>
-          <Text style = {styles.Subtitulo}>Saiba como econimizar sua água!</Text>
+          <Text style = {styles.Subtitulo}>Saiba como economizar sua água!</Text>
 
         </View>
         <View style = {{alignItems: "center",}}>
-          <BotaoFase numero={3} destino="/TelasQuiz/TelaQuiz"/>
+          <BotaoFase numero={3} onPress={() => navegarParaQuiz(3)}/>
           <View style = {{alignItems: "center",}}>
             <Image style = {styles.Imagem} source={require("../../images/RioImpar.png")}/>
           </View>
@@ -78,7 +86,7 @@ export default function GameScreen(){
           <Text style = {styles.Subtitulo}>Conheça os que afetam as plantas!</Text>
         </View>
         <View style = {{alignItems: "center",}}>
-          <BotaoFase numero={4} destino="/TelasQuiz/TelaQuiz"/>
+          <BotaoFase numero={4} onPress={() => navegarParaQuiz(4)}/>
           <View style = {{alignItems: "center",}}>
             <Image style = {styles.Imagem} source={require("../../images/RioPar.png")}/>
           </View>
@@ -93,7 +101,7 @@ export default function GameScreen(){
           <Text style = {styles.Subtitulo}>Como cuidar da sua planta corretamente.</Text>
       </View>
       <View style = {{alignItems: "center",}}>
-        <BotaoFase numero={5} destino="/TelasQuiz/TelaQuiz"/>
+        <BotaoFase numero={5} onPress={() => navegarParaQuiz(5)}/>
       </View>
 
       <View>

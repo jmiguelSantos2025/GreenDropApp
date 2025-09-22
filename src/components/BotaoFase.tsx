@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { View, Pressable, TouchableOpacity, ImageBackground, Text, StyleSheet } from "react-native";
-import { router } from "expo-router";
 
 type Props = {
   numero: number;
-  destino: string;
+  onPress: () => void; // Alterado de 'destino' para 'onPress'
 };
 
-export default function BotaoFase({ numero, destino }: Props) {
+export default function BotaoFase({ numero, onPress }: Props) {
   const [mostrarBalao, setMostrarBalao] = useState(false);
 
   return (
@@ -34,13 +33,13 @@ export default function BotaoFase({ numero, destino }: Props) {
             imageStyle={{ resizeMode: "contain" }}
           >
             <Pressable
-            style={({ pressed }) => [
+              style={({ pressed }) => [
                 styles.botaoIniciar,
                 pressed && { shadowOffset: { width: 0, height: 2 }, shadowColor: "#3D9F42" },
-            ]}
+              ]}
               onPress={() => {
                 setMostrarBalao(false);
-                router.push(destino);
+                onPress(); // Chama a função passada por props
               }}
             >
               <Text style={styles.textoIniciar}>Iniciar</Text>
